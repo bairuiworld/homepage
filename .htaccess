@@ -1,11 +1,32 @@
-Options +FollowSymLinks
-RewriteEngine on
-#RewriteCond %{HTTP_HOST} ^modernui\.org\.ua
-#RewriteRule ^(.*)$ http://metroui.org.ua/$1 [R=permanent,L]
+<IfModule mod_rewrite.c>
+<Files ~ "^.(htaccess|htpasswd)$">
+deny from all
+</Files>
 
-RewriteBase /
+Options -Indexes
+Options +FollowSymLinks
+
+#允许解析文件中的SSI指令
+Options +Includes
+
+#定义404，500错误页面
+#ErrorDocument 404 /404.htm 
+#ErrorDocument 500 /404.htm
+
+#定义目录索引页面
+DirectoryIndex index.php
+order deny,allow
+
+RewriteEngine on
+
+#设置根目录
+RewriteBase /home/
+
+#去掉链接地址中index.php字符串
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . index.php
-RewriteCond %{THE_REQUEST} ^GET\ .*/index\.(php|html)\ HTTP
-RewriteRule ^(.*)index\.(php|html)$ /$1 [R=301,L]
+RewriteCond $1 !^(index.php|test.php|test_ui.php|images|robots\.txt)
+
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+</IfModule>

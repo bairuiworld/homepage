@@ -2,13 +2,11 @@
         <div class="nav-bar">
             <div class="nav-bar-inner padding10">
                 <span class="element">
-                    2012-2013, Metro UI CSS &copy; by <a class="fg-color-white" href="mailto:sergey@pimenov.com.ua">Sergey Pimenov</a>
+                    2013-2014, HomePage &copy; by <a class="fg-color-white" href="mailto:forgerui@gmail.com">Ge Rui</a>
                 </span>
             </div>
         </div>
     </div>
-
-    <?php include("counter.php");?>
 
     <script type="text/javascript" src="<?php echo base_url();?>metro/js/assets/github.info.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>metro/js/assets/google-analytics.js"></script>
