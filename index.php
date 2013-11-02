@@ -1,212 +1,205 @@
-<?php include("header.php")?>
+<?php
+date_default_timezone_set('Asia/Shanghai');
+/*
+ *---------------------------------------------------------------
+ * APPLICATION ENVIRONMENT
+ *---------------------------------------------------------------
+ *
+ * You can load different configurations depending on your
+ * current environment. Setting the environment also influences
+ * things like logging and error reporting.
+ *
+ * This can be set to anything, but default usage is:
+ *
+ *     development
+ *     testing
+ *     production
+ *
+ * NOTE: If you change these, also change the error_reporting() code below
+ *
+ */
+	define('ENVIRONMENT', 'development');
+/*
+ *---------------------------------------------------------------
+ * ERROR REPORTING
+ *---------------------------------------------------------------
+ *
+ * Different environments will require different levels of error reporting.
+ * By default development will show errors but testing and live will hide them.
+ */
 
-<div class="page" id="page-index">
-    <div class="page-region">
-        <div class="page-region-content">
-            <div class="grid">
-                <div class="row">
-                    <div class="span8">
-                        <div class="hero-unit">
-                            <div id="carousel1" class="carousel" data-role="carousel" data-param-duration="300">
-                                <div class="slides">
+if (defined('ENVIRONMENT'))
+{
+	switch (ENVIRONMENT)
+	{
+		case 'development':
+			error_reporting(E_ALL);
+		break;
 
-                                    <div class="slide" id="slide1">
-                                        <h2>Create site in Windows 8 style now!</h2>
+		case 'testing':
+		case 'production':
+			error_reporting(0);
+		break;
 
-                                        <p class="bg-color-blueDark padding20 fg-color-white">Metro UI CSS allows to create a Web site in the style of
-                                            Windows 8 quickly and without distractions
-                                            on routine tasks.</p>
-                                        <h3>To start: include <strong>modern.css</strong> in head of page</h3>
-                                        <p class="tertiary-info-text">
-                                            &lt;link href="modern.css" rel="stylesheet"&gt; and add to metro container <strong>metrouicss</strong> class. Example: &lt;body class="metrouicss"&gt;...&lt;/body&gt;
-                                        </p>
-                                    </div>
+		default:
+			exit('The application environment is not set correctly.');
+	}
+}
 
-                                    <div class="slide" id="slide2">
-                                        <h2 class="fg-color-darken">Metro UI CSS</h2>
-                                        <p class="bg-color-pink padding20 fg-color-white">
-                                            Developed with the advice of Microsoft to build the user interface and <strong>include:</strong>
-                                        </p>
+/*
+ *---------------------------------------------------------------
+ * SYSTEM FOLDER NAME
+ *---------------------------------------------------------------
+ *
+ * This variable must contain the name of your "system" folder.
+ * Include the path if the folder is not in the same  directory
+ * as this file.
+ *
+ */
+	$system_path = 'system';
 
-                                        <div class="span3 place-left">
-                                            <ul class="unstyled sprite-details">
-                                                <li><i class="icon-checkmark"></i> General styles</li>
-                                                <li><i class="icon-checkmark"></i> Grid with Responsive</li>
-                                                <li><i class="icon-checkmark"></i> Layouts</li>
-                                            </ul>
-                                        </div>
-                                        <div class="span3 place-left">
-                                            <ul class="unstyled sprite-details">
-                                                <li><i class="icon-checkmark"></i> Typography</li>
-                                                <li><i class="icon-checkmark"></i> Many components</li>
-                                                <li><i class="icon-checkmark"></i> 300+ built in icons</li>
-                                            </ul>
-                                        </div>
-                                    </div>
+/*
+ *---------------------------------------------------------------
+ * APPLICATION FOLDER NAME
+ *---------------------------------------------------------------
+ *
+ * If you want this front controller to use a different "application"
+ * folder then the default one you can set its name here. The folder
+ * can also be renamed or relocated anywhere on your server.  If
+ * you do, use a full server path. For more info please see the user guide:
+ * http://codeigniter.com/user_guide/general/managing_apps.html
+ *
+ * NO TRAILING SLASH!
+ *
+ */
+	$application_folder = 'application';
 
-                                    <div class="slide" id="slide3">
-                                        <h2>Metro UI CSS is a BizSpark Startup</h2>
-                                        <p class="bg-color-red fg-color-white padding20">
-                                            Microsoft® BizSpark® is a global program that helps software startups succeed by giving them access to software development tools, connecting them with key industry players, and providing marketing visibility.
-                                        </p>
-                                        <p><a href="http://bizspark.com">Join</a> the BizSpark Program now.</p>
-                                    </div>
-                                </div>
+/*
+ * --------------------------------------------------------------------
+ * DEFAULT CONTROLLER
+ * --------------------------------------------------------------------
+ *
+ * Normally you will set your default controller in the routes.php file.
+ * You can, however, force a custom routing by hard-coding a
+ * specific controller class/function here.  For most applications, you
+ * WILL NOT set your routing here, but it's an option for those
+ * special instances where you might want to override the standard
+ * routing in a specific front controller that shares a common CI installation.
+ *
+ * IMPORTANT:  If you set the routing here, NO OTHER controller will be
+ * callable. In essence, this preference limits your application to ONE
+ * specific controller.  Leave the function name blank if you need
+ * to call functions dynamically via the URI.
+ *
+ * Un-comment the $routing array below to use this feature
+ *
+ */
+	// The directory name, relative to the "controllers" folder.  Leave blank
+	// if your controller is not in a sub-folder within the "controllers" folder
+	// $routing['directory'] = '';
 
-                                <span class="control left"><i class="icon-arrow-left-3"></i></span>
-                                <span class="control right"><i class="icon-arrow-right-3"></i></span>
+	// The controller class file name.  Example:  Mycontroller
+	// $routing['controller'] = '';
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="span4">
-                        <div class="span4 padding30 text-center place-left bg-color-blueLight" id="sponsorBlock">
-                            <br />
-                            <br />
-                            <h2 class="fg-color-red">project is looking for a sponsor</h2>
-                            <p class="">2000+ <a class="" href="http://hit.ua/site_view/19154">users</a> every day</p>
-                            <br />
-                            <a href="sponsoring.php"><h1><i class="icon-arrow-right-3 fg-color-red"></i></h1></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid">
-                <div class="row">
-                    <div class="span4 bg-color-blue">
-                        <img src="images/simple.png" class="place-right" style="margin: 10px;"/>
-                        <h2 class="fg-color-white">&nbsp;Simple</h2>
-                    </div>
-
-                    <div class="span4 bg-color-green">
-                        <img src="images/grid.png" class="place-right" style="margin: 10px;"/>
-                        <h2 class="fg-color-white">&nbsp;Sufficient</h2>
-                    </div>
-
-                    <div class="span4 bg-color-yellow">
-                        <img src="images/responsive.png" class="place-right" style="margin: 10px;"/>
-                        <h2 class="fg-color-white">&nbsp;Responsive</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid">
-                <div class="row">
-                    <div class="span4">
-                        <div class="image-container bg-color-lighten" style="width: 100%">
-                            <div style="height: 200px; overflow: hidden"><img src="images/spface.jpg" /></div>
-                            <div class="overlay">
-                                <div class="padding10 fg-color-grayDark tertiary-text">Sergey Pimenov (left) - Kiev, Ukraine. Author, team leader. CSS/LESS, HTML, Javascript.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="span4">
-                        <div class="image-container bg-color-lighten" style="width: 100%">
-                            <div style="height: 200px; overflow: hidden"><img src="images/svface.jpg" /></div>
-                            <div class="overlay">
-                                <div class="padding10 fg-color-grayDark tertiary-text">Sergey Volkov - Voljskiy, Russia. Team member. Javascript leader.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="span4">
-                        <div class="image-container bg-color-lighten" style="width: 100%">
-                            <div style="height: 200px; overflow: hidden"><img src="images/vbface.jpg" /></div>
-                            <div class="overlay">
-                                <div class="padding10 fg-color-grayDark tertiary-text">Valerio Battaglia - Ticino, Switzerland. Team member. CSS/LESS, HTML, Javascript.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="span8">
-                        <h2>Welcome</h2>
-                        <p>
-                            Metro UI CSS a set of styles to create a site with an interface similar to Windows 8 Metro UI. This set of styles was developed as a self-contained solution.
-                        </p>
-
-                        <p class="bg-color-blueLight padding20 tertiary-text1">
-                            Metro UI CSS is made with <a href="http://lesscss.org" class="fg-color-blue"><abbr title="LESS a dynamic stylesheet language created by one good man Alexis Sellier">LESS</abbr></a>. It makes developing systems-based CSS faster, easier, and more fun.
-                        </p>
-
-                        <p>
-                            <strong>Metro UI CSS is free if you placed back link to Metro UI CSS site.</strong>
-                            <br />
-                            Example:
-                            <br />
-                        </p>
-                        <blockquote class="tertiary-text">
-                            Styled with &lt;a href="http://metroui.org.ua"&gt;Metro UI CSS&lt;/a&gt;
-                        </blockquote>
+	// The controller function you wish to be called.
+	// $routing['function']	= '';
 
 
-                        <h2>Browsers</h2>
-                        <div class="browsers-icons clearfix">
-                            <h2 class="place-left" title="Internet Explorer 9+"><i class="icon-IE"></i> </h2>
-                            <h2 class="place-left" title="Chrome"><i class="icon-chrome"></i> </h2>
-                            <h2 class="place-left" title="Firefox"><i class="icon-firefox"></i> </h2>
-                            <h2 class="place-left" title="Opera"><i class="icon-opera"></i> </h2>
-                            <h2 class="place-left" title="Safari"><i class="icon-safari"></i> </h2>
-                        </div>
+/*
+ * -------------------------------------------------------------------
+ *  CUSTOM CONFIG VALUES
+ * -------------------------------------------------------------------
+ *
+ * The $assign_to_config array below will be passed dynamically to the
+ * config class when initialized. This allows you to set custom config
+ * items or override any default config values found in the config.php file.
+ * This can be handy as it permits you to share one application between
+ * multiple front controller files, with each file containing different
+ * config values.
+ *
+ * Un-comment the $assign_to_config array below to use this feature
+ *
+ */
+	// $assign_to_config['name_of_config_item'] = 'value of config item';
 
-                        <blockquote class="tertiary-text">
-                            Internet explorer supported from 9 version.
-                        </blockquote>
-                    </div>
-                    <div class="span4">
-                        <div id="social">
-                            <div id="shareme" data-url="http://metroui.org.ua/" data-text="" data-title="share this"></div>
-                        </div>
 
-                        <br />
-                        <h2>GitHub Info:</h2>
-                        <table class="github-info" data-repo="olton/Metro-UI-CSS">
-                            <tbody>
-                            <tr>
-                                <td><i class="icon-star-4"></i> Starred:</td>
-                                <td class="right"><span class="github-watchers">1000</span></td>
-                            </tr>
-                            <tr>
-                                <td><i class="icon-share-2"></i> Forks:</td>
-                                <td class="right bg"><span class="github-forks">220</span></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" style="padding: 20px 0 0; border: 0;" class="right">
-                                    <button class="image-button bg-color-pink fg-color-white" onclick="document.location.href='https://github.com/olton/Metro-UI-CSS'">View on Github<img class="bg-color-pinkDark" src="images/github.png"/></button>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
 
-                        <h2>Donate</h2>
-                        <div class="grid">
-                            <div class="row">
-                                <div class="span2">
-                                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                                        <input type="hidden" name="cmd" value="_s-xclick">
-                                        <input type="hidden" name="hosted_button_id" value="AVMB2NYSENK3A">
-                                        <!--<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">-->
-                                        <!--<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">-->
-                                        <button type="submit" class="image-button bg-color-green fg-color-white" style="width: 100%;">
-                                            PayPal <i class="icon-heart bg-color-greenDark"></i>
-                                        </button>
-                                    </form>
-                                </div>
-                                <div class="span2">
-                                    <button type="submit" class="image-button bg-color-green fg-color-white" style="width: 100%;" onclick="window.location.href='https://liqpay.com/?do=clickNbuy&button=i2970090512'">
-                                        LiqPay <i class="icon-heart bg-color-greenDark"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <? include("adsense.php")?>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+// --------------------------------------------------------------------
+// END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
+// --------------------------------------------------------------------
 
-<?php include("footer.php")?>
+/*
+ * ---------------------------------------------------------------
+ *  Resolve the system path for increased reliability
+ * ---------------------------------------------------------------
+ */
+
+	// Set the current directory correctly for CLI requests
+	if (defined('STDIN'))
+	{
+		chdir(dirname(__FILE__));
+	}
+
+	if (realpath($system_path) !== FALSE)
+	{
+		$system_path = realpath($system_path).'/';
+	}
+
+	// ensure there's a trailing slash
+	$system_path = rtrim($system_path, '/').'/';
+
+	// Is the system path correct?
+	if ( ! is_dir($system_path))
+	{
+		exit("Your system folder path does not appear to be set correctly. Please open the following file and correct this: ".pathinfo(__FILE__, PATHINFO_BASENAME));
+	}
+
+/*
+ * -------------------------------------------------------------------
+ *  Now that we know the path, set the main path constants
+ * -------------------------------------------------------------------
+ */
+	// The name of THIS file
+	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
+
+	// The PHP file extension
+	// this global constant is deprecated.
+	define('EXT', '.php');
+
+	// Path to the system folder
+	define('BASEPATH', str_replace("\\", "/", $system_path));
+
+	// Path to the front controller (this file)
+	define('FCPATH', str_replace(SELF, '', __FILE__));
+
+	// Name of the "system folder"
+	define('SYSDIR', trim(strrchr(trim(BASEPATH, '/'), '/'), '/'));
+
+
+	// The path to the "application" folder
+	if (is_dir($application_folder))
+	{
+		define('APPPATH', $application_folder.'/');
+	}
+	else
+	{
+		if ( ! is_dir(BASEPATH.$application_folder.'/'))
+		{
+			exit("Your application folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
+		}
+
+		define('APPPATH', BASEPATH.$application_folder.'/');
+	}
+
+/*
+ * --------------------------------------------------------------------
+ * LOAD THE BOOTSTRAP FILE
+ * --------------------------------------------------------------------
+ *
+ * And away we go...
+ *
+ */
+require_once BASEPATH.'core/CodeIgniter.php';
+
+/* End of file index.php */
+/* Location: ./index.php */
