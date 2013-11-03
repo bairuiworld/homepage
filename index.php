@@ -191,6 +191,11 @@ if (defined('ENVIRONMENT'))
 		define('APPPATH', BASEPATH.$application_folder.'/');
 	}
 
+	$metro_folder = 'metro';
+	if (is_dir($metro_folder))
+	{
+		define('METROPATH', $metro_folder.'/');
+	}
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE

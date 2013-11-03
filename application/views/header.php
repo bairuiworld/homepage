@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1">
-    <meta name="description" content="Metro UI CSS">
-    <meta name="author" content="Sergey Pimenov">
+    <meta name="description" content="My HomePage">
+    <meta name="author" content="Ge Rui">
     <meta name="keywords" content="windows 8, modern style, Metro UI, style, modern, css, framework">
 
     <link href="<?php echo base_url();?>metro/css/modern.css" rel="stylesheet">

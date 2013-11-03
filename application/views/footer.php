@@ -2,7 +2,7 @@
         <div class="nav-bar">
             <div class="nav-bar-inner padding10">
                 <span class="element">
-                    2013-2014, HomePage &copy; by <a class="fg-color-white" href="mailto:forgerui@gmail.com">Ge Rui</a>
+                    Copyright &copy; <a class="fg-color-white" href="mailto:forgerui@gmail.com">Ge Rui</a>  2013, All Rights Reserved
                 </span>
             </div>
         </div>

@@ -5,7 +5,7 @@
     <div class="page-header">
     	<div class="page-header-content">
     		<h1>近期<small>工作</small></h1>
-            <a href="http://www.forgerui.tk" class="back-button big page-back"></a>
+            <a href="<?php echo base_url();?>" class="back-button big page-back"></a>
         </div>
     </div>
 
@@ -23,7 +23,6 @@
 	                    <ol>
 	                    	<li>学习Metro UI CSS，搭建个人主页</li>
 	                    	<li>学习MATLAB</li>
-	                    	<li>完成别人的网站</li>
 	                    </ol>
 	                 </div>
 	            </div>
