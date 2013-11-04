@@ -4,7 +4,7 @@
 	        <span class="pull-menu"></span>
 
 	        <a href="<?php echo base_url();?>"><span class="element brand">
-	            <img class="place-left" src="<?php echo METROPATH;?>images/logo32.png" style="height: 20px"/>
+	            <img class="place-left" src="<?php echo base_url();?>metro/images/logo32.png" style="height: 20px"/>
 	            GeRui's<small>&nbsp;Home</small>
 	        </span></a>
 

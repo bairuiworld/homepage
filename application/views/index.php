@@ -12,25 +12,25 @@
 						<div class="carousel" style="height: 200px;" data-role="carousel" data-param-period="3000" data-param-effect="fade" >
 							<div class="slides">
 								<div class="slide image" id="slide1" >
-                                	<img src="<?php echo METROPATH;?>images/panner1.jpg">
+                                	<img src="<?php echo base_url();?>metro/images/panner1.jpg">
                                     <div class="description">
                                     	1
                                     </div>
                                 </div>
                                 <div class="slide image" id="slide2" >
-                                    <img src="<?php echo METROPATH;?>images/panner2.jpg">
+                                    <img src="<?php echo base_url();?>metro/images/panner2.jpg">
                                     <div class="description">
                                     	2
                                     </div>
                                 </div>
                                 <div class="slide image" id="slide3">
-                                    <img src="<?php echo METROPATH;?>images/panner3.jpg">
+                                    <img src="<?php echo base_url();?>metro/images/panner3.jpg">
                                     <div class="description">
                                     	3
                                     </div>
                                 </div>
                                 <div class="slide image" id="slide4">
-                                    <img src="<?php echo METROPATH;?>images/panner4.jpg">
+                                    <img src="<?php echo base_url();?>metro/images/panner4.jpg">
                                     <div class="description">
                                     	4
                                     </div>

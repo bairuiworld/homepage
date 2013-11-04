@@ -21,7 +21,7 @@
 	                        <div style="overflow: hidden; display: none;">
 	                            <div class="tile double bg-color-blueDark">
 				                    <div class="tile-content">
-				                        <img src="<?php echo METROPATH;?>images/profile.png" class="place-right">
+				                        <img src="<?php echo base_url();?>metro/images/profile.png" class="place-right">
 				                        	<h4 style="margin-bottom: 5px;">Ge Rui</h4>
 			                        		<p>&nbsp;</p>
 			                        		<p>邮箱:&nbsp;forgerui@gmail.com</p>
